@@ -104,6 +104,7 @@ fun GreetingPreview() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
+
             GreetingText(
                 title = stringResource(R.string.jetpack_title),
                 text2 = stringResource(R.string.jetpack_compose_text1),

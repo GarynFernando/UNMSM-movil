@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -102,10 +101,16 @@ fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        // GreetingText(message = "Happy Birthday Sam!", from = "From Garencio")
-        GreetingImage(
-            message = stringResource(R.string.happy_birthday_sam),
-            from = stringResource(R.string.signature_text),
-        )
+        // A surface container using the 'background' color from the theme
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            GreetingImage(
+                message = stringResource(R.string.happy_birthday_sam),
+                from = stringResource(R.string.signature_text),
+                modifier = Modifier.padding(8.dp)
+            )
+        }
     }
 }
